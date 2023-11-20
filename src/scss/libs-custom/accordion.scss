@@ -1,0 +1,65 @@
+.collapse-enter-active,
+.collapse-leave-active {
+  transition: 200ms ease-in-out;
+  overflow: hidden;
+}
+.collapse-enter-to,
+.collapse-leave-from {
+  height: var(--ui-transition-height);
+}
+.collapse-enter-from,
+.collapse-leave-to {
+  opacity: 0;
+  height: 0;
+}
+ 
+.accordion {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 20rem;
+  width: 100%;
+}
+.accordion-item {
+  background-color: transparent;
+  border-radius: 0.25rem;
+  transition: background-color 150ms;
+  &.ui-active {
+    background-color: #fff;
+  }
+}
+.accordion-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  appearance: none;
+  transition: background-color 150ms;
+  outline-color: #fff;
+  border-radius: 0.25rem;
+  background-color: #131d33;
+  padding-top: 0.75rem;
+  padding-right: 1rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  width: 100%;
+  font-weight: 500;
+  font-size: 0.875rem;
+  &:hover {
+    background-color: #111826;
+  }
+  & svg {
+    transition: transform 150ms;
+    width: 1rem;
+  }
+  &.ui-active svg {
+    transform: scaleY(-1);
+  }
+}
+.accordion-panel {
+  border-radius: 0 0 0.25rem 0.25rem;
+  background-color: white;
+  padding: 1rem 1.25rem;
+  color: #111826;
+  font-size: 0.875rem;
+  line-height: 1.375;
+  font-weight: 500;
+}

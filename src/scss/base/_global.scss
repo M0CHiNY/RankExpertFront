@@ -1,0 +1,26 @@
+
+html,
+body {
+  display: flex;
+  background-color: red;
+  flex-direction: column;
+  color: white;
+  font-size: 36px;
+  line-height: 1.2;
+  height: 100%;
+  @include _767 {
+    background-color: green;
+  }
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1820px;
+  margin: 0 auto;
+  position: relative;
+}
+

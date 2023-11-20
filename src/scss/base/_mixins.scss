@@ -1,0 +1,38 @@
+@mixin _767 {
+  @media (min-width: 767px) {
+    @content; 
+  }
+}
+
+@mixin _1024 {
+  @media (min-width: 1024px) {
+    @content; 
+  }
+}
+
+
+@mixin _1200 {
+  @media (min-width: 1200px) {
+    @content; 
+  }
+}
+
+@mixin _1400 {
+  @media (min-width: 1400px) {
+    @content; 
+  }
+}
+
+@mixin _1920{
+  @media (min-width: 1920px) {
+    @content; 
+  }
+}
+
+//Fonts family
+
+@mixin OpenSans-600 {
+ font-family: 'OpenSans',
+   sans-serif;
+ font-weight: 600;
+}
