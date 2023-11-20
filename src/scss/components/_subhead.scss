@@ -1,0 +1,187 @@
+.subhead {
+  background-color: $colorAcent;
+  background-image: url("../images/subheader-mobil.svg");
+  background-repeat: no-repeat;
+  background-position: -50%; 
+  color: $colorInDarkFon;
+
+  @include _767 {
+     background-position: 47000%; 
+  }
+
+  @include _1024 {
+     background-position: 158%; 
+  }
+
+  @include _1200 {
+     background-position: 135%; 
+  }
+
+  @include _1400 {
+     background-position: 110%; 
+  }
+
+  @include _1920 {
+     background-position: 100%; 
+  }
+
+  &__wrap {
+    padding: 50px 0 25px;
+
+    @include _767 {
+      padding: 60px 0 25px;
+    }
+
+    @include _1024 {
+      padding: 110px 0 25px;
+    }
+
+    @include _1200 {
+      padding: 135px 0 25px;
+    }
+
+    @include _1400 {
+      padding: 150px 0 25px;
+    }
+
+    @include _1920 {
+      padding: 179px 0 25px;
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    @include mukuta-500;
+    line-height: 1.12;
+    margin-bottom: 15px;
+    max-width: 293px;
+
+    @include _767 {
+      font-size: 36px;
+      max-width: 350px;
+    }
+
+    @include _1024 {
+      line-height: 1.2;
+      font-size: 42px;
+      max-width: 500px;
+    }
+
+    @include _1200 {
+      font-size: 52px;
+      max-width: 600px;
+    }
+
+    @include _1400 {
+      line-height: 1.3;
+      font-size: 62px;
+      max-width: 680px;
+    }
+
+    @include _1920 {
+      line-height: 1.35;
+      font-size: 72px;
+      max-width: 740px;
+    }
+
+    span {
+      text-transform: uppercase;
+      color: $colorBtn;
+    }
+  }
+
+  &__descr {
+    max-width: 295px;
+    margin-bottom: 23px;
+
+    @include _767 {
+      max-width: 350px;
+    }
+
+    @include _1024 {
+      font-size: 24px;
+      max-width: 400px;
+    }
+
+    @include _1200 {
+      font-size: 26px;
+      max-width: 500px;
+      margin-bottom: 26px;
+    }
+
+    @include _1400 {
+      font-size: 28px;
+      max-width: 550px;
+      margin-bottom: 40px;
+    }
+
+    @include _1920 {
+      font-size: 30px;
+      max-width: 640px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+//animate scroll
+:root {
+  --color: rgba(245, 246, 240, 0.918);
+}
+
+.container_mouse {
+  display: none;
+  text-align: center;
+  color: var(--color);
+  font-weight: bold;
+  cursor: pointer;
+  padding-bottom: 24px;
+
+  @include _1024{
+    display: block;
+  }
+}
+
+.container_mouse .mouse-btn {
+  margin: 0 auto 15px;
+  width: 75px;
+  height: 125px;
+  border: 3px solid var(--color);
+  border-radius: 30px;
+  display: flex;
+}
+
+.container_mouse .mouse-btn .mouse-scroll {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(
+    170deg,
+    rgba(122, 122, 124, 0.918),
+    $colorInDarkFon
+  );
+  border-radius: 50%;
+  margin: auto;
+  animation: scrolling 1.5s linear infinite;
+}
+
+.mouse-scroll__text {
+  @include mukuta-500;
+  font-size: 24px;
+}
+
+@keyframes scrolling {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+}
