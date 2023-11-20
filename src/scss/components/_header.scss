@@ -1,0 +1,76 @@
+
+//
+.header {
+  background-color: $colorInDarkFhone;
+  padding: 12px 0;
+  @include _1024 {
+    padding: 15px 0;
+  }
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+  }
+
+  .mob-nav-toggler {
+    appearance: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 5px;
+  }
+  .mob-nav-toggler svg {
+    width: 50px;
+    height: 50px;
+    & path {
+      fill: $colorAcent;
+    }
+  }
+  @media (min-width: 1024px) {
+    .mob-nav-toggler {
+      display: none;
+    }
+  }
+
+  // navigation menu end
+  .btn {
+    display: none;
+    @include _1400 {
+      display: block;
+    }
+  }
+
+  .lang-switcher {
+    display: none;
+    @include _1024 {
+      display: block;
+      
+      & .lang-switcher__item {
+        color: $colorBorder;
+        @include mukuta-400;
+        font-size: 24px;
+        & .lang-switcher-link {
+            color: $colorAcent;
+          }
+         
+        & .lang-switcher-link.current {
+          color: $colorBorder;
+        }
+      }
+      & .lang-switcher__item:not(:last-child){
+        border-bottom: 2px solid $colorAcent;
+      }
+    }
+  }
+  &__box {
+    display: none;
+   @include _1024{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+   }
+  }
+}
