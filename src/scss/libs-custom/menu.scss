@@ -17,7 +17,7 @@
 }
 .nav-submenu {
   background: $colorBtn;
-  color: $colorInDarkFhone;
+  color: $colorInDarkFon;
   border-radius: 0.3rem;
   font-weight: 400;
   font-size: calc(15 / 16 * 1rem);
@@ -41,7 +41,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
-    color: $colorInDarkFhone;
+    color: $colorInDarkFon;
   }
   .nav ul > li > a:not(:only-child)::after {
     rotate: 90deg;
@@ -84,7 +84,7 @@
     cursor: pointer;
   }
   .mob-nav-content__inner {
-    background-color: $colorInDarkFhone;
+    background-color: $colorInDarkFon;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -201,7 +201,7 @@
     padding: 0.5rem 0.75rem 0.5rem 0.75rem;
     border-radius: 0.3rem;
     outline: none;
-    color: $colorInDarkFhone;
+    color: $colorInDarkFon;
     font-size: 16px;
     @include hind-500;
   }
@@ -275,7 +275,7 @@
     font-size: 16px;
     @include mukuta-400;
     border-radius: 8px;
-    color: $colorInDarkFhone;
+    color: $colorInDarkFon;
   }
   & .lang-switcher-mobile__item.current {
     background-color: $colorBorder;
