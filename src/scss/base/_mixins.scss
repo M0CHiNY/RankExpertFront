@@ -1,38 +1,69 @@
 @mixin _767 {
   @media (min-width: 767px) {
-    @content; 
+    @content;
   }
 }
 
 @mixin _1024 {
   @media (min-width: 1024px) {
-    @content; 
+    @content;
   }
 }
 
-
 @mixin _1200 {
   @media (min-width: 1200px) {
-    @content; 
+    @content;
   }
 }
 
 @mixin _1400 {
   @media (min-width: 1400px) {
-    @content; 
+    @content;
   }
 }
 
-@mixin _1920{
+@mixin _1920 {
   @media (min-width: 1920px) {
-    @content; 
+    @content;
   }
 }
+
+
+
 
 //Fonts family
 
-@mixin OpenSans-600 {
- font-family: 'OpenSans',
-   sans-serif;
- font-weight: 600;
+@mixin ubuntu-400 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+@mixin hind-300 {
+  font-family: "Hind Madurai", sans-serif;
+  font-weight: 300;
+}
+
+@mixin hind-400 {
+  font-family: "Hind Madurai", sans-serif;
+  font-weight: 400;
+}
+
+@mixin hind-500 {
+  font-family: "Hind Madurai", sans-serif;
+  font-weight: 500;
+}
+
+@mixin mukuta-400 {
+  font-family: "Mukta Vaani", sans-serif;
+  font-weight: 400;
+}
+
+@mixin mukuta-500 {
+  font-family: "Mukta Vaani", sans-serif;
+  font-weight: 500;
+}
+
+@mixin mukuta-700 {
+  font-family: "Mukta Vaani", sans-serif;
+  font-weight: 700;
 }

@@ -2,15 +2,12 @@
 html,
 body {
   display: flex;
-  background-color: red;
+  background-color: #fff;
   flex-direction: column;
-  color: white;
-  font-size: 36px;
-  line-height: 1.2;
+  color: $colorAcent;
+  font-size: 16px;
+  line-height: 1.38;
   height: 100%;
-  @include _767 {
-    background-color: green;
-  }
 }
 
 .main {
@@ -19,7 +16,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1820px;
+  max-width: 1510px;
   margin: 0 auto;
   position: relative;
 }
