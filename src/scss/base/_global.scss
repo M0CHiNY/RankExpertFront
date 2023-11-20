@@ -23,3 +23,50 @@ body {
     padding: 0 15px;
   }
 }
+
+//btn modal
+.btn {
+  background-color: $colorBtn;
+  color: $colorInDarkFhone;
+  font-size: 20px;
+  @include mukuta-500;
+  border-radius: 16px;
+  padding: 5px 32px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border: none;
+  z-index: 1;
+  overflow: hidden;
+  @include _767 {
+    padding: 5px 50px;
+    font-size: 24px;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      background-color: $colorBorder;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      color: #fff;
+    }
+    &:hover:after {
+      left: 0;
+      width: 100%;
+    }
+    &:active {
+      top: 2px;
+    }
+  }
+}
+
+
