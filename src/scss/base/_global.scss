@@ -8,6 +8,18 @@ body {
   line-height: 1.38;
   height: 100%;
   @include hind-400;
+
+  @include _1024 {
+    font-size: 18px;
+  }
+
+  @include _1400 {
+    font-size: 20px;
+  }
+
+  @include _1920 {
+    font-size: 24px;
+  }
 }
 
 .main {
@@ -75,4 +87,28 @@ body {
   }
 }
 
+.title {
+  @include mukuta-500;
+  font-size: 24px;
+
+  @include _767 {
+    font-size: 28px;
+  }
+  
+  @include _1024 {
+    font-size: 30px;
+  }
+
+  @include _1200 {
+    font-size: 32px;
+  }
+
+  @include _1400 {
+    font-size: 36px;
+  }
+
+  @include _1920 {
+    font-size: 40px;
+  }
+}
 

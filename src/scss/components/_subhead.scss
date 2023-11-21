@@ -2,27 +2,27 @@
   background-color: $colorAcent;
   background-image: url("../images/subheader-mobil.svg");
   background-repeat: no-repeat;
-  background-position: -50%; 
+  background-position: -50%;
   color: $colorInDarkFon;
 
   @include _767 {
-     background-position: 1400%; 
+    background-position: 1400%;
   }
 
   @include _1024 {
-     background-position: 158%; 
+    background-position: 158%;
   }
 
   @include _1200 {
-     background-position: 135%; 
+    background-position: 135%;
   }
 
   @include _1400 {
-     background-position: 110%; 
+    background-position: 110%;
   }
 
   @include _1920 {
-     background-position: 100%; 
+    background-position: 100%;
   }
 
   &__wrap {
@@ -125,6 +125,14 @@
   &__btn {
     display: block;
     margin: 0 auto;
+    padding: 5px 32px;
+
+    &.btn {
+      @include _1024 {
+        margin: 0;
+        padding: 5px 50px;
+      }
+    }
   }
 }
 
@@ -141,15 +149,15 @@
   cursor: pointer;
   padding-bottom: 24px;
 
-  @include _1024{
+  @include _1024 {
     display: block;
   }
 }
 
 .container_mouse .mouse-btn {
   margin: 0 auto 15px;
-  width: 75px;
-  height: 125px;
+  width: 50px;
+  height: 100px;
   border: 3px solid var(--color);
   border-radius: 30px;
   display: flex;
@@ -157,8 +165,8 @@
 
 .container_mouse .mouse-btn .mouse-scroll {
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 17px;
+  height: 17px;
   background: linear-gradient(
     170deg,
     rgba(122, 122, 124, 0.918),
