@@ -22,6 +22,7 @@
     }
     @include _1024 {
       gap: 155px;
+      justify-content: space-between;
     }
   }
   &__item:first-child {
@@ -40,6 +41,10 @@
     }
     @include _1024 {
       justify-content: flex-end;
+      margin-right: 30px;
+    }
+    @include _1400{
+        margin-right: 60px;
     }
   }
   &__item {
@@ -71,7 +76,6 @@
     @include hind-400;
     padding-bottom: 25px;
     @include _767 {
-      font-size: 20px;
       padding-bottom: 0;
     }
     @include _1024 {
@@ -84,6 +88,10 @@
     height: 50px;
     object-fit: cover;
     margin-bottom: 14px;
+    @include _767 {
+        width: 75px;
+        height: 75px;
+    }
     @include _1024 {
       width: 150px;
       height: 150px;
@@ -92,8 +100,8 @@
   }
   .btn {
     @include _767 {
-      font-size: 20px;
-      padding: 3px 15px;
+      font-size: 25px;
+      padding: 5px 20px;
     }
     @include _1024 {
       padding: 5px 50px;
