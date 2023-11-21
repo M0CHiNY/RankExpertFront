@@ -1,0 +1,290 @@
+.nav-menu {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  
+}
+
+:is(.nav-menu, .nav-submenu) a {
+  padding: 0.6rem 1rem;
+  display: block;
+}
+@media (min-width: 1024px) {
+  .mob-nav-content__inner {
+    display: none;
+  }
+  :is(.nav-menu, .nav-submenu) a {
+    padding: 0.5rem 1rem;
+  }
+  .mob-nav-content{
+    background-color: $colorInDarkFon; 
+  }
+}
+
+.nav-submenu {
+  background: $colorBtn;
+  color: $colorInDarkFon;
+  border-radius: 0.3rem;
+  font-weight: 400;
+  font-size: calc(15 / 16 * 1rem);
+}
+.nav-submenu:not(.ui-shown) {
+  display: none;
+}
+.nav ul > li > a:not(:only-child)::after {
+  content: "";
+  background-image: url("../images/icon/arrow-menu.svg");
+  transform: rotate(270deg);
+  display: block;
+  width: 0.7rem;
+  aspect-ratio: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1024px) {
+ 
+  .nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    color: $colorInDarkFon;
+  }
+  .nav ul > li > a:not(:only-child)::after {
+    rotate: 90deg;
+    transition: scale 0.2s;
+  }
+  .nav ul > li > a.ui-active:not(:only-child)::after {
+    scale: -1 1;
+  }
+  .mob-nav {
+    // position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+  }
+  .mob-nav-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition-duration: 0.2s;
+    transition-property: opacity, translate;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    opacity: 0;
+  }
+  .mob-nav-backdrop.ui-active {
+    opacity: 1;
+  }
+  .mob-nav-close {
+    all: unset;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.6rem;
+    cursor: pointer;
+  }
+  .mob-nav-close svg {
+    width: 50px;
+    apsect-ratio: 1;
+    stroke: rgb(35 39 50 / 1);
+    display: block;
+    cursor: pointer;
+  }
+  .mob-nav-content__inner {
+    background-color: $colorInDarkFon;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    padding-left: 15px;
+  }
+  .mob-nav-content {
+    @include hind-500;
+    font-size: 16px;
+    background-color: $colorBorder; 
+    width: fit-content;
+    height: 100%;
+    min-width: 17rem;
+    position: relative;
+    overflow: auto;
+  }
+  .mob-nav-content.ui-enter-active,
+  .mob-nav-content.ui-leave-active {
+    transition-duration: 0.2s;
+    transition-property: opacity, translate;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+  .mob-nav-content.ui-enter-from,
+  .mob-nav-content.ui-leave-to {
+    opacity: 0;
+    translate: -100% 0;
+  }
+  .mob-nav-content.ui-enter-to,
+  .mob-nav-content.ui-leave-from {
+    opacity: 1;
+    translate: 0%;
+  }
+  .logo--mob {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+  .nav-submenu {
+    padding-left: 0.5rem;
+    background-color: $colorBorder;
+    font-size: 14px;
+  }
+  .nav-submenu::before,
+  .nav-submenu::after {
+    content: "";
+    height: 0.25rem;
+    display: block;
+  }
+  .nav-submenu::after {
+    height: 0.5rem;
+  }
+  .nav-submenu.ui-enter-active,
+  .nav-submenu.ui-leave-active {
+    transition-duration: 0.2s;
+    transition-property: opacity, height;
+    transition-timing-function: ease-in-out;
+    overflow: hidden;
+  }
+  .nav-submenu.ui-enter-from,
+  .nav-submenu.ui-leave-to {
+    opacity: 0;
+    height: 0;
+  }
+  .nav-submenu.ui-enter-to,
+  .nav-submenu.ui-leave-from {
+    opacity: 1;
+    height: var(--ui-transition-height);
+  }
+}
+@media (min-width: 1024px) {
+  .mob-nav-close,
+  .logo--mob {
+    display: none;
+  }
+  .nav-menu {
+    padding: 0;
+  }
+  .nav-menu > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    color: $colorAcent;
+    @include mukuta-400;
+    font-size: 24px;
+  }
+  .nav-menu > li > a::after {
+    width: 0.5rem;
+    rotate: 90deg;
+    filter: invert(1);
+  }
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-submenu {
+    
+    --ui-dropdown-arrow-offset: 0rem;
+    --ui-dropdown-arrow-padding: 0.8rem;
+    --ui-dropdown-arrow-width: 0.4rem;
+    --ui-dropdown-arrow-height: 0.4rem;
+    --ui-dropdown-placement: bottom-start;
+    padding: 0.5rem 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+      rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+  }
+  .nav-submenu > li {
+    position: relative;
+  }
+  .nav-submenu > li > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+    border-radius: 0.3rem;
+    outline: none;
+    color: $colorInDarkFon;
+    font-size: 16px;
+    @include hind-500;
+  }
+  .nav-submenu > li > a:is(:hover, :focus-visible) {
+    background-color: $colorBorder;
+  }
+  .nav-submenu > li > a::after {
+    opacity: 0.75;
+  }
+  .nav-submenu .nav-submenu {
+    --ui-dropdown-placement: right-start;
+    --ui-dropdown-padding: -0.25rem;
+    --ui-dropdown-offset: -0.25rem;
+    --ui-dropdown-flip: false;
+    --ui-dropdown-sticky: true;
+  }
+  .nav-submenu.ui-enter-active,
+  .nav-submenu.ui-leave-active {
+    transition-duration: 0.2s;
+    transition-property: opacity, scale;
+    transition-timing-function: ease-in-out;
+    transform-origin: var(--ui-dropdown-transform-origin);
+  }
+  .nav-submenu.ui-enter-from,
+  .nav-submenu.ui-leave-to {
+    opacity: 0;
+    scale: 0.95;
+  }
+  [data-ui-floating="dropdown"]::backdrop {
+    transition: all 0.15s ease-in-out;
+    background-color: rgb(17 24 38 / 0.05);
+    opacity: 0;
+  }
+  [data-ui-floating="dropdown"]:has(> .ui-active)::backdrop {
+    opacity: 1;
+  }
+}
+
+.logo-box {
+  max-width: 112px;
+  height: auto;
+  object-fit: contain;
+  @include _1024 {
+    max-width: 185px;
+  }
+  & img {
+    max-width: 112px;
+    height: auto;
+    object-fit: contain;
+    @include _1024 {
+      max-width: 185px;
+    }
+  }
+}
+
+.lang-switcher-mobile {
+  @include _1024 {
+    display: none;
+  }
+  margin-right: 15px;
+
+  & .lang-switcher-mobile__list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+  & .lang-switcher-mobile__item {
+    padding: 1px 10px;
+    background-color: $colorAcent;
+    font-size: 16px;
+    @include mukuta-400;
+    border-radius: 8px;
+    color: $colorInDarkFon;
+  }
+  & .lang-switcher-mobile__item.current {
+    background-color: $colorBorder;
+  }
+}
