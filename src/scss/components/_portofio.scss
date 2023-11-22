@@ -1,0 +1,133 @@
+.portfolio {
+  @include _1024 {
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-image: url("../images/portfolio/left-bg.svg");
+      background-position: left;
+      background-repeat: no-repeat;
+    }
+    &::after {
+      background-image: url("../images/portfolio/right-bg.svg");
+      background-position: right;
+     
+    }
+  }
+  padding-top: calc(25px + (50 - 25) * ((100vw - 375px) / (1920 - 375)));
+  padding-bottom: calc(25px + (50 - 25) * ((100vw - 375px) / (1920 - 375)));
+  background-color: $colorAcent;
+  color: $colorInDarkFon;
+  &__title {
+    text-align: center;
+    margin-bottom: calc(15px + (25 - 15) * ((100vw - 375px) / (1920 - 375)));
+  }
+  p {
+    margin-bottom: 25px;
+    @include _1024 {
+      max-width: 997px;
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 50px;
+    }
+  }
+  &__swiper {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__navbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 180px;
+    margin: 0 auto;
+    gap: 10px;
+    margin-top: 25px;
+  }
+  &-pagination {
+    text-align: center;
+  }
+  //centered slide
+  .swiper-slide.swiper-slide-active {
+    display: flex;
+    justify-content: center;
+  }
+  .portfolio-button__prev,
+  .portfolio-button__next {
+    cursor: pointer;
+  }
+  .portfolio__navbox {
+    @include _1024 {
+      display: none;
+    }
+  }
+  .swiper-slide{
+   @include _1024{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+  }
+  .swiper-wrapper {
+    @include _1024 {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+      gap: 50px 25px;
+      margin: 0 auto;
+    }
+  }
+  &__more {
+    display: none;
+    @include _1024 {
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+      margin-top: 50px;
+    }
+  }
+  &__btn {
+    position: relative;
+    padding: 5px 50px;
+    background-color: $colorBtn;
+    color: $colorInDarkFon;
+    font-size: 24px;
+    @include mukuta-700;
+    min-width: 487px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border: 2 solid transparent;
+    transition: all 0.4s;
+    cursor: pointer;
+    z-index: 2;
+    @include _1024 {
+      svg {
+        transform: translate(0);
+        
+      }
+      &:hover {
+        transition: all 0.4s;
+        border: 2 solid $colorBorder;
+        background-color: $colorInDarkFon;
+        color: $colorAcent;
+        svg {
+          transform: translateX(5px);
+          path{
+            stroke:$colorAcent;
+          }
+        }
+      }
+    }
+  }
+}
