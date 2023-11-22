@@ -12,54 +12,75 @@
   opacity: 0;
   height: 0;
 }
- 
+
 .accordion {
+  margin: 0 auto;
   display: grid;
-  gap: 0.5rem;
-  max-width: 20rem;
+  gap: 15px;
+  max-width: 355px;
   width: 100%;
-}
-.accordion-item {
-  background-color: transparent;
-  border-radius: 0.25rem;
-  transition: background-color 150ms;
-  &.ui-active {
-    background-color: #fff;
+
+  @include _1024 {
+    max-width: 750px;
+  }
+
+  @include _1400 {
+    max-width: 998px;
   }
 }
+
+.accordion-item {
+  &.ui-active {
+    border-radius: 32px 32px 0 0;
+  }
+}
+
 .accordion-tab {
   display: flex;
+  border: transparent;
   justify-content: space-between;
   align-items: center;
-  appearance: none;
-  transition: background-color 150ms;
-  outline-color: #fff;
-  border-radius: 0.25rem;
-  background-color: #131d33;
-  padding-top: 0.75rem;
-  padding-right: 1rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1rem;
+  border-radius: 32px;
+  background-color: $colorAcent;
+  color: $colorInDarkFon;
+  padding: 8px 15px;
   width: 100%;
-  font-weight: 500;
-  font-size: 0.875rem;
-  &:hover {
-    background-color: #111826;
+  @include mukuta-500;
+  font-size: 20px;
+  transform: translateY(1px);
+
+  @include _1024 {
+    font-size: 24px;
+    padding: 9px 15px;
   }
+
+  @include _1200 {
+    font-size: 28px;
+  }
+
+  @include _1400 {
+    font-size: 32px;
+    padding: 11px 15px;
+  }
+
   & svg {
     transition: transform 150ms;
-    width: 1rem;
+    width: 30px;
+    height: 30px;
   }
+
   &.ui-active svg {
     transform: scaleY(-1);
   }
+
+  &.ui-active {
+    border-radius: 32px 32px 0 0;
+  }
 }
+
 .accordion-panel {
-  border-radius: 0 0 0.25rem 0.25rem;
-  background-color: white;
-  padding: 1rem 1.25rem;
-  color: #111826;
-  font-size: 0.875rem;
-  line-height: 1.375;
-  font-weight: 500;
+  background-color: $colorAcent;
+  border-radius: 0px 0px 32px 32px;
+  padding: 18px 15px 15px;
+  color: $colorInDarkFon;
 }
