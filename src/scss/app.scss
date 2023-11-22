@@ -16,11 +16,7 @@
 
 /* Global include*/
 @import 'base/global';
-
-// @import 'libs-custom/swiper';
-
-
-
+@import 'libs-custom/swiper';
 @import 'libs-custom/menu';
 @import 'libs-custom/modal';
 @import 'libs-custom/accordion';
@@ -33,4 +29,6 @@
 @import 'components/search-info';
 @import 'components/_portofio';
 @import 'libs-custom/swiper';
-
+@import 'components/rules';
+@import 'components/reviews';
+@import 'components/faqs';

@@ -1,0 +1,168 @@
+.ruls {
+  padding: 25px 0;
+
+  // @include _1024 {
+  //   padding: 50px 0;
+  // }
+
+  // @include _1200 {
+  //   padding: 75px 0;
+  // }
+
+  @include _1400 {
+    padding: 50px 0;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+
+.ruls__steps {
+  @include _1024 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.ruls__item {
+  min-height: 265px;
+  max-width: 340px;
+  border-radius: 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+  @include _767 {
+    max-width: 375px;
+  }
+
+  @include _1024 {
+    min-height: 265px;
+    height: 265px;
+    max-width: 400px;
+  }
+  @include _1920 {
+    max-width: 485px;
+  }
+}
+
+.ruls__num {
+  position: relative;
+  @include mukuta-500;
+  font-size: 250px;
+  line-height: 1;
+  color: $colorBorder;
+}
+
+.ruls__info-box {
+  margin-left: auto;
+  align-self: center;
+  width: 100%;
+  max-width: 250px;
+  z-index: 3;
+  padding: 10px 0 0 30px;
+  max-height: 265px;
+
+  @include _1920 {
+    max-width: 350px;
+  }
+
+  svg {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.ruls__info-caption {
+  @include mukuta-500;
+  font-size: 24px;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.ruls__info-text {
+  width: 100%;
+  max-width: 250px;
+  padding-right: 5px;
+  overflow-y: hidden;
+  max-height: 100px;
+}
+
+:root {
+  --bg1: #f5f8f7;
+}
+
+ul.infoGraphic {
+  li {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    background-color: $colorInDarkFon;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    .numberWrap {
+      position: absolute;
+    }
+    .coverWrap {
+      transform: rotate(130deg);
+      position: absolute;
+      width: 288px; /* 18em in px */
+      height: 240px; /* 15em in px */
+      left: -48px; /* -3em in px */
+      top: -16px; /* -1em in px */
+      .numberCover {
+        position: absolute;
+        background: var(--bg1);
+        width: 288px; /* 18em in px */
+        height: 96px; /* 6em in px */
+        border-radius: 50% 50% 0 0;
+        border-bottom: 3px solid #f5f8f7;
+        transition: all 0.4s;
+
+        &::before {
+          position: absolute;
+          content: "";
+          bottom: 5px;
+          left: 64px; /* 4em in px */
+          right: 64px; /* 4em in px */
+          top: 80px; /* 5em in px */
+          box-shadow: 0 0 30px 17px #48668577;
+          border-radius: 100px / 10px;
+          z-index: -1;
+        }
+        &::after {
+          position: absolute;
+          bottom: 0;
+          content: "";
+          left: -10%;
+          width: 120%;
+          height: 150%;
+          background: radial-gradient(
+            at bottom,
+            #48668533,
+            transparent,
+            transparent
+          );
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+ul.infoGraphic li:hover .coverWrap .numberCover {
+  @include _1024 {
+    border-radius: 100%;
+  }
+}
