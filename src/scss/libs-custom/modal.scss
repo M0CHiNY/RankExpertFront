@@ -1,11 +1,6 @@
-
-
 [hidden] {
   display: none !important;
 }
-
-
-
 
 .ui-dialog-prevent-scroll {
   overflow: hidden;
@@ -30,28 +25,45 @@
 .dialog {
   display: flex;
   position: fixed;
-  z-index: 10;
+  z-index: 9999;
   inset: 0;
 }
 .dialog-backdrop {
   position: absolute;
   inset: 0;
-  background-color: #11182680;
+  background-color: $colorAcent;
   transition: opacity 0.15s;
-  opacity: 0;
+  opacity: 0.6;
   &.ui-active {
-    opacity: 1;
+    opacity: 0.6;
+    max-width: 100%;
   }
 }
 .dialog-content {
   position: relative;
   margin: auto;
-  max-width: 100%;
-  width: 20rem;
-  background-color: #fff;
-  padding: 1.25rem 1.5rem;
-  color: #111826;
-  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 300px;
+  background-color: $colorAcent;
+  padding: 10px 15px;
+  color: $colorInDarkFon;
+  border-radius: 32px;
+  box-shadow: inset 0 0 2px 2px $colorInDarkFon;
+
+  @include _767 {
+    max-width: 500px;
+  }
+
+  @include _1024 {
+    max-width: 740px;
+  }
+
+  @include _1200 {
+    display: flex;
+    justify-content: space-around;
+    max-width: 95%;
+  }
+
   &.ui-enter-active,
   &.ui-leave-active {
     transition: 0.25s;
@@ -63,16 +75,8 @@
     opacity: 0;
   }
 }
-.dialog-title {
-  font-weight: 500;
-  margin-bottom: 0.4em;
-}
-.dialog-description {
-  margin-bottom: 0.5rem;
-  color: rgb(17 24 38 / 0.8);
-}
 
-.btn {
+.btn-modal {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -83,36 +87,173 @@
   border: none;
   font-family: inherit;
 }
-.btn--md {
-  outline: 2px;
-  outline-offset: 2px;
-  border-radius: 0.25rem;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-.btn--primary {
-  background-color: #131d33;
-  color: white;
-  &:hover {
-    background-color: #111826;
-  }
-  &:focus-visible {
-    outline: 2px solid #131d33;
-  }
-}
 
 .btn--close {
-  border-radius: 0.125rem;
   color: #111826;
   outline-color: #111826cc;
   width: 1.75rem;
   aspect-ratio: 1 / 1;
   position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
+  right: 16px;
+  top: 10px;
+  border-radius: 8px;
+
+  @include _767 {
+    width: 40px;
+  }
+
+  @include _1024 {
+    width: 50px;
+  }
+
   & svg {
     width: 1.25rem;
+
+    @include _767 {
+      width: 30px;
+    }
+
+    @include _1024 {
+      width: 40px;
+    }
+  }
+}
+
+.modal-form__img {
+  display: none;
+
+  @include _1200 {
+    display: block;
+    max-width: calc(400px + (590 - 400) * ((100vw - 1200px) / (1920 - 1200)));
+    height: calc(200px + (305 - 200) * ((100vw - 1200px) / (1920 - 1200)));
+    align-self: center;
+  }
+}
+
+.modal-form {
+  min-width: 340px;
+
+  @include _1200 {
+    min-width: 700px;
+  }
+
+  &__box {
+    display: block;
+    margin-bottom: 10px;
+
+    &:first-child {
+      margin-top: 30px;
+
+      @include _1024 {
+        margin-top: 50px;
+      }
+    }
+
+    @include _1024 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    @include _1200 {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-top: 5px;
+    display: block;
+    height: 25px;
+    background-color: $colorInDarkFon;
+    border: none;
+    border-radius: 8px;
+    padding: 0 5px;
+    color: $colorAcent;
+
+    @include _767 {
+      height: 40px;
+      padding: 0 10px;
+      font-size: 18px;
+    }
+
+    @include _1024 {
+      height: 50px;
+      padding: 0 15px;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    @include _1200 {
+      font-size: 24px;
+    }
+  }
+
+  &__textarea {
+    display: block;
+    resize: none;
+    width: 100%;
+    height: 60px;
+    margin: 5px 0 20px;
+    border-radius: 8px;
+    padding: 5px;
+    color: $colorAcent;
+
+    @include _767 {
+      padding: 5px 10px;
+      height: 100px;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    @include _1024 {
+      padding: 10px 15px;
+      height: 120px;
+      font-size: 20px;
+    }
+
+    @include _1200 {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    margin: 0 auto 15px;
+    font-size: 18px;
+    line-height: 1;
+
+    @include _767 {
+      height: 40px;
+      font-size: 20px;
+    }
+
+    @include _1024 {
+      height: 50px;
+      width: 100%;
+      max-width: 450px;
+      margin: 0 auto 30px;
+
+      @include _1200 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__condition {
+    display: block;
+    @include mukuta-500;
+    font-size: 14px;
+    color: $colorInDarkFon;
+    margin-bottom: 10px;
+    text-align: center;
+
+    @include _767 {
+      font-size: 16px;
+    }
   }
 }

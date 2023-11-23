@@ -50,6 +50,9 @@ if (document.getElementById('mob-nav')) {
 if (document.querySelector('.accordion')){
   Tablist.initAll();
 }
+if (document.querySelector(".btn")) {
+  Dialog.initAll();
+}
 
 
 
