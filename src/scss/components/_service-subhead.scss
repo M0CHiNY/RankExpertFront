@@ -1,0 +1,71 @@
+.service-subhead {
+  padding: 15px 0;
+
+  @include _1024 {
+    padding: 25px 0;
+  }
+
+  @include _1200 {
+    padding-bottom: 50px;
+  }
+
+  @include _1400 {
+    padding-bottom: 75px;
+  }
+
+  @include _1920 {
+    padding-bottom: 100px;
+  }
+  
+
+  &__wrap {
+    @include _1024 {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  &__box {
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 15px;
+
+    @include _1024 {
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    span {
+      color: $colorBtn;
+      text-transform: uppercase;
+    }
+  }
+
+  &__text {
+    margin: 0 auto;
+    margin-bottom: 24px;
+    width: calc(294px + (643 - 294) * ((100vw - 375px) / (1920 - 375)));
+  }
+
+  &__button.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 50px;
+    @include _1024 {
+      margin-left: 0;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include _1024 {
+      display: block;
+      width: calc(180px + (308 - 180) * ((100vw - 1024px) / (1920 - 1024)));
+      height: auto;
+    }
+  }
+}
