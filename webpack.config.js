@@ -9,7 +9,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const pages = ['about', 'contact']; // list pages
+const pages = ["about", "contact", "single-service"]; // list pages
 
 const environment = require('./configuration/environment');
 

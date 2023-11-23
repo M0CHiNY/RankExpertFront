@@ -1,0 +1,31 @@
+.bread-crumb {
+  padding-top: 15px;
+
+  &__box {
+    display: flex;
+  }
+
+  &__iterm {
+    font-size: 16px;
+    &:not(:first-child) {
+      position: relative;
+      padding-left: 15px;
+      &::before {
+        content: "/";
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    &--step {
+      color: #8f8f8e;
+    }
+  }
+
+  &__link {
+    @include mukuta-400;
+    font-size: 16px;
+    color: inherit;
+    margin-right: 5px;
+  }
+}

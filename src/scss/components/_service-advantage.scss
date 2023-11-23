@@ -1,0 +1,53 @@
+.service-advantage {
+  padding: 15px 0;
+  background-color: $colorAcent;
+  color: $colorInDarkFon;
+
+  @include _1024 {
+    padding: 30px 0;
+  }
+
+  @include _1200 {
+    padding: 40px 0 60px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 25px;
+    
+    @include _1024 {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+
+    @include _1024 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: calc(314px + (702 - 294) * ((100vw - 375px) / (1920 - 375)));
+    padding-left: 40px;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      left: 0;
+      top: 0;
+      background-image: url("../images/serviceAdvantageChecks.svg");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+
+    @include _767 {
+      margin: 0 auto;
+    }
+  }
+}
