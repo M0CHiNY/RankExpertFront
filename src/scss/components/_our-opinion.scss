@@ -1,0 +1,90 @@
+.our-opinion {
+  padding: 25px 0;
+  @include _1200 {
+    padding: 50px 0;
+  }
+
+  @include _1400 {
+    padding: 75px 0;
+  }
+
+  @include _1920 {
+    padding: 100px 0;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 25px;
+
+    @include _767 {
+      text-align: left;
+    }
+
+    @include _1024 {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__wrap {
+    @include _767 {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 355px;
+    height: 274px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 15px;
+
+    @include _767 {
+      margin: 0 10px 0 0;
+    }
+
+    @include _1024 {
+      margin-right: 25px;
+    }
+
+    @include _1024 {
+      max-width: calc(355px + (487 - 355) * ((100vw - 1024px) / (1920 - 1024)));
+      height: calc(274px + (380 - 274) * ((100vw - 375px) / (1920 - 375)));
+    }
+  }
+
+  &__quote-caption {
+    @include mukuta-500;
+    font-size: calc(20px + (36 - 20) * ((100vw - 375px) / (1920 - 375)));
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    margin-bottom: 15px;
+  }
+
+  &__bottom-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__quote-author {
+    @include hind-500;
+    font-size: 20px;
+
+    @include _1024 {
+      font-size: 24px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+  &__logo {
+    width: 105px;
+    height: 31px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
