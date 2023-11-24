@@ -2,6 +2,40 @@
 import Swiper from "swiper/bundle";
 // import Swiper styles
 
+// Section team start
+
+
+const swiper = new Swiper('.team-swiper', {
+  direction: "horizontal",
+  navigation: {
+    nextEl: ".team-button__next",
+    prevEl: ".team-button__prev",
+  },
+  resizeObserver: true,
+    pagination: {
+        el: '.team-pagination',
+        clickable: true
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        centeredSlides: true,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      1400: {
+        slidesPerView: 3,
+        spaceBetween: 2,
+      },
+    },
+});
+
+
+// Section team end
+
+// Section our porfolio start
 // Функція для ініціалізації Swiper
 function initSwiper() {
   const swiperContainer = document.querySelector(".portfolio__swiper");
@@ -14,8 +48,8 @@ function initSwiper() {
   const swiper = new Swiper(".portfolio__swiper", {
     direction: "horizontal",
     pagination: {
-      el: '.portfolio-pagination',
-      type: 'fraction',
+      el: ".portfolio-pagination",
+      type: "fraction",
     },
     // If we need navigation
     navigation: {
@@ -56,3 +90,4 @@ checkWindowWidth();
 
 // Відслідковування події resize на вікні
 window.addEventListener("resize", checkWindowWidth);
+// Section our porfolio end
