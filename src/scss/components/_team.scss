@@ -1,0 +1,144 @@
+.team {
+  color: $colorInDarkFon;
+  padding-bottom: calc(25px + (75 - 25) * ((100vw - 375px) / (1920 - 375)));
+  &__inner {
+    padding-top: calc(25px + (50 - 25) * ((100vw - 375px) / (1920 - 375)));
+    color: $colorInDarkFon;
+    background-color: $colorAcent;
+    padding-bottom: 25px;
+    margin-bottom: calc(25px + (40 - 25) * ((100vw - 375px) / (1920 - 375)));
+    @include _1024 {
+      position: relative;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(100px + (390 - 100) * ((100vw - 1024px) / (1920 - 1024)));
+        height: 220px;
+        background-repeat: no-repeat;
+        top: 50%;
+      }
+      &::before {
+        background-image: url("../images/team/team-bg-left.svg");
+        left: 0;
+      }
+      &::after {
+        background-image: url("../images/team/team-bg-right.svg");
+        right: 0;
+      }
+    }
+  }
+  &-title {
+    text-align: center;
+    margin-bottom: calc(15px + (25 - 15) * ((100vw - 375px) / (1920 - 375)));
+  }
+  &-text {
+    font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1920 - 375)));
+    max-width: 749px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .team-swiper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .team-swiper__slide {
+    border-radius: 32px;
+    max-width: 427px;
+    width: 100%;
+    min-height: calc(550px + (640 - 2550) * ((100vw - 375px) / (1920 - 375)));
+    padding: 15px 15px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    background-color: $colorAcent;
+    .team-swiper__img {
+      display: flex;
+      justify-content: center;
+      max-width: 427px;
+      width: 100%;
+      max-height: 340px;
+      object-fit: cover;
+      margin-bottom: 25px;
+      border-radius: calc(24px + (25 - 24) * ((100vw - 375px) / (1920 - 375)));
+    }
+    .team-swiper__specialization {
+      font-size: 24px;
+      @include mukuta-500;
+      margin-bottom: calc(10px + (15 - 10) * ((100vw - 375px) / (1920 - 375)));
+      max-width: 427px;
+      width: 100%;
+    }
+    .team-swiper__name {
+      font-size: 20px;
+      @include mukuta-500;
+      margin-bottom: calc(10px + (15 - 10) * ((100vw - 375px) / (1920 - 375)));
+    }
+    .team-swiper__about {
+      font-size: 20px;
+      min-height: 122px;
+      margin-bottom: calc(15px + (25 - 15) * ((100vw - 375px) / (1920 - 375)));
+    }
+    .team-swiper__email {
+      position: relative;
+      color: $colorInDarkFon;
+      font-size: 20px;
+      padding-left: 40px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+      @include _1024 {
+        &:hover {
+          transition: all 0.3s;
+          border-bottom: 1px solid $colorInDarkFon;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-image: url("../images/team/entypo_email.svg");
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        @include _1024 {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  .team-button__inner {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+  }
+  .team-pagination {
+    @include _1024 {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .team-button__prev,
+  .team-button__next {
+    width: 50px;
+    height: 50px;
+    @include _1024 {
+      &:hover {
+        & svg {
+          fill: $colorBorder;
+          stroke: $colorInDarkFon;
+        }
+      }
+    }
+  }
+}
