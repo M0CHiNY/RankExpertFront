@@ -161,21 +161,36 @@ body {
       transform: translateX(0);
     }
     @include _1024 {
-      &:hover{
+      &:hover {
         transition: all 0.5;
-        border: 1.5px solid transparent;  
+        border: 1.5px solid transparent;
         background-color: $colorBorder;
         color: $colorInDarkFon;
         & svg {
           transform: translateX(5px);
-        path {
-          fill:$colorInDarkFon;
-          stroke: $colorInDarkFon;
-        }
+          path {
+            fill: $colorInDarkFon;
+            stroke: $colorInDarkFon;
+          }
         }
       }
-     
     }
-    
+  }
+}
+.list-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(15px + (25 - 15) * ((100vw - 375px) / (1920 - 375)));
+  .tag {
+    padding-left: calc(20px + (30 - 20) * ((100vw - 375px) / (1920 - 375)));
+    padding-right: calc(20px + (30 - 20) * ((100vw - 375px) / (1920 - 375)));
+    border-radius: 8px;
+    background: $colorBtn;
+    color: $colorInDarkFon;
+    font-size: calc(15px + (20 - 15) * ((100vw - 375px) / (1920 - 375)));
+    cursor: pointer;
+    & a {
+      color: $colorInDarkFon;
+    }
   }
 }
