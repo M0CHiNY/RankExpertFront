@@ -1,0 +1,46 @@
+.error {
+  padding-top: calc(50px + (100 - 50) * ((100vw - 375px) / (1920 - 375)));
+  padding-bottom: calc(50px + (100 - 50) * ((100vw - 375px) / (1920 - 375)));
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-img {
+    max-width: 485px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  &-title {
+    font-size: calc(24px + (40 - 24) * ((100vw - 375px) / (1920 - 375)));
+    @include mukuta-500;
+    color: #000;
+    margin-bottom: 30px;
+  }
+  &-btn {
+    font-size: calc(20px + (24 - 20) * ((100vw - 375px) / (1920 - 375)));
+    padding: 5px 50px;
+    border-radius: 16px;
+    border: 1.5px solid $colorBorder;
+    color: $colorAcent;
+    @include mukuta-500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
+    @include _1024 {
+      &:hover {
+        transition: all 0.3s;
+        border: 1.5px solid $colorInDarkFon;
+        background-color: $colorBorder;
+        color: $colorInDarkFon;
+        svg path {
+          fill: $colorInDarkFon;
+          stroke: $colorInDarkFon;
+        }
+      }
+    }
+  }
+}
