@@ -55,7 +55,7 @@
     max-width: 767px;
     width: 100%;
     @include _1024 {
-      width: 640px;
+      width: 541px;
     }
     @include _1400 {
       max-width: 767px;
@@ -78,9 +78,14 @@
     border-radius: 16px;
     margin-bottom: calc(15px + (25 - 15) * ((100vw - 375px) / (1920 - 375)));
     @include _1024 {
+      width: 216px;
+      height: 209px;
+      object-fit: cover;
+    }
+    @include _1400 {
       width: 230px;
       height: 267px;
-      object-fit: cover;
+      
     }
   }
   &-article__item-title {
@@ -96,3 +101,4 @@
     }
   }
 }
+
