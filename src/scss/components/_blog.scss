@@ -27,13 +27,7 @@
       margin-bottom: calc(15px + (25 - 15) * ((100vw - 375px) / (1920 - 375)));
     }
   }
-  &-article__box {
-    display: flex;
-    align-items: center;
-    margin-bottom: calc(15px + (25 - 15) * ((100vw - 375px) / (1920 - 375)));
-    font-size: calc(15px + (20 - 15) * ((100vw - 375px) / (1920 - 375)));
-    color: $bradcrumbs-color;
-  }
+
   .blog-article__title {
     font-size: calc(24px + (40 - 24) * ((100vw - 375px) / (1920 - 375)));
     margin-bottom: 15px;

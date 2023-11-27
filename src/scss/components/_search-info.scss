@@ -64,6 +64,9 @@
   &__title {
     text-align: center;
     margin-bottom: 15px;
+    @include _1024{
+      text-align: left;
+    }
 
     @include _1200 {
       margin-bottom: 20px;
