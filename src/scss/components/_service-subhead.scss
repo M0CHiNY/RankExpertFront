@@ -19,14 +19,21 @@
   
 
   &__wrap {
-    @include _1024 {
+    @include _767 {
       display: flex;
-      justify-content: space-around;
+      gap:50px;
+    }
+    @include _1024 {
+      gap:100px;
+    }
+    @include _1200 {
+      gap:150px;
+    }
+    @include _1400 {
+      gap:300px;
     }
   }
 
-  &__box {
-  }
   &__title {
     text-align: center;
     margin-bottom: 15px;
@@ -62,9 +69,10 @@
   &__img {
     display: none;
 
-    @include _1024 {
+    @include _767 {
       display: block;
-      width: calc(180px + (308 - 180) * ((100vw - 1024px) / (1920 - 1024)));
+      max-width: calc(200px + (308 - 200) * ((100vw - 375px) / (1920 - 375)));
+      width: 100%;
       height: auto;
     }
   }

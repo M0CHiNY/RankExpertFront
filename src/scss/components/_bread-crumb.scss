@@ -1,12 +1,12 @@
 .bread-crumb {
-  padding-top: 15px;
+  padding-top: calc(15px + (25 - 15) * ((100vw - 375px) / (1920 - 375)));
 
   &__box {
     display: flex;
   }
 
   &__iterm {
-    font-size: 16px;
+    font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1920 - 375)));
     &:not(:first-child) {
       position: relative;
       padding-left: 15px;
@@ -24,7 +24,7 @@
 
   &__link {
     @include mukuta-400;
-    font-size: 16px;
+    font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1920 - 375)));
     color: inherit;
     margin-right: 5px;
   }
