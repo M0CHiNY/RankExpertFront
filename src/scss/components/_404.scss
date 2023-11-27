@@ -1,6 +1,9 @@
 .error {
   padding-top: calc(50px + (100 - 50) * ((100vw - 375px) / (1920 - 375)));
-  padding-bottom: calc(50px + (100 - 50) * ((100vw - 375px) / (1920 - 375)));
+  @include _1024{
+    padding-bottom: calc(50px + (100 - 50) * ((100vw - 375px) / (1920 - 375)));
+  }
+  
   &__inner {
     display: flex;
     flex-direction: column;

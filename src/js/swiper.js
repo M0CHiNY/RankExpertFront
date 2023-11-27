@@ -1,20 +1,20 @@
 // import Swiper JS
 import Swiper from "swiper/bundle";
-// import Swiper styles
 
 // Section team start
+const teamSwiper = document.querySelector(".portfolio__swiper");
 
-
-const swiper = new Swiper('.team-swiper', {
-  direction: "horizontal",
-  navigation: {
-    nextEl: ".team-button__next",
-    prevEl: ".team-button__prev",
-  },
-  resizeObserver: true,
+if (teamSwiper) {
+  const swiper = new Swiper(".team-swiper", {
+    direction: "horizontal",
+    navigation: {
+      nextEl: ".team-button__next",
+      prevEl: ".team-button__prev",
+    },
+    resizeObserver: true,
     pagination: {
-        el: '.team-pagination',
-        clickable: true
+      el: ".team-pagination",
+      clickable: true,
     },
     breakpoints: {
       0: {
@@ -30,17 +30,17 @@ const swiper = new Swiper('.team-swiper', {
         spaceBetween: 2,
       },
     },
-});
-
+  });
+}
 
 // Section team end
 
 // Section our porfolio start
-// Функція для ініціалізації Swiper
+const swiperContainer = document.querySelector(".portfolio__swiper");
+
 function initSwiper() {
   const swiperContainer = document.querySelector(".portfolio__swiper");
 
-  // Перевірка, чи існують слайди в Swiper
   if (swiperContainer.swiper && swiperContainer.swiper.slides.length > 0) {
     swiperContainer.swiper.removeAllSlides();
   }
@@ -51,12 +51,10 @@ function initSwiper() {
       el: ".portfolio-pagination",
       type: "fraction",
     },
-    // If we need navigation
     navigation: {
       nextEl: ".portfolio-button__next",
       prevEl: ".portfolio-button__prev",
     },
-    // Responsive breakpoints
     breakpoints: {
       0: {
         slidesPerView: 1,
@@ -69,25 +67,45 @@ function initSwiper() {
     },
   });
 
-  // Зберігаємо посилання на Swiper
   swiperContainer.swiper = swiper;
 }
 
-// Функція для перевірки ширини вікна та ініціалізації Swiper
-function checkWindowWidth() {
-  const swiperContainer = document.querySelector(".portfolio__swiper");
+if (swiperContainer) {
+  function checkWindowWidth() {
+    const swiperContainer = document.querySelector(".portfolio__swiper");
 
-  if (window.innerWidth < 1024 && !swiperContainer.swiper) {
-    initSwiper();
-  } else if (window.innerWidth >= 1024 && swiperContainer.swiper) {
-    swiperContainer.swiper.destroy();
-    swiperContainer.swiper = null; // Очистити посилання на Swiper
+    if (window.innerWidth < 1024 && !swiperContainer.swiper) {
+      initSwiper();
+    } else if (window.innerWidth >= 1024 && swiperContainer.swiper) {
+      swiperContainer.swiper.destroy();
+      swiperContainer.swiper = null;
+    }
   }
+
+  checkWindowWidth();
+
+  window.addEventListener("resize", checkWindowWidth);
 }
-
-// Викликати функцію при завантаженні сторінки
-checkWindowWidth();
-
-// Відслідковування події resize на вікні
-window.addEventListener("resize", checkWindowWidth);
 // Section our porfolio end
+
+// most mopular article slider start
+const teamSwiperSlider = document.querySelector(".most-popular__swiper");
+
+if (teamSwiperSlider) {
+  const mostPopular = new Swiper(".most-popular__swiper", {
+    direction: "horizontal",
+    pagination: {
+      el: ".most-popular__pagintation",
+      clickable: true
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      1024: {
+        slidesPerView: 2,
+      },
+    },
+  });
+}
+// most mopular article slider end
