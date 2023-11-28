@@ -1,46 +1,46 @@
-
 /* libs */
-@import 'base/libs';
+@import "base/libs";
 
 /* Core variables */
-@import 'base/vars';
+@import "base/vars";
 
 /* CSS Reset */
-@import 'base/reset';
+@import "base/reset";
 
 /* Fonts */
-@import 'base/fonts';
+@import "base/fonts";
 
 /* Mixins, helpers and functions */
-@import 'base/mixins';
+@import "base/mixins";
 
 /* Global include*/
-@import 'base/global';
-@import 'libs-custom/swiper';
-@import 'libs-custom/menu';
-@import 'libs-custom/modal';
-@import 'libs-custom/accordion';
+@import "base/global";
+@import "libs-custom/swiper";
+@import "libs-custom/menu";
+@import "libs-custom/modal";
+@import "libs-custom/accordion";
 
 /* Components */
-@import 'components/footer';
-@import 'components/header';
-@import 'components/subhead';
-@import 'components/action';
-@import 'components/search-info';
-@import 'components/team';
-@import 'components/portofio';
-@import 'libs-custom/swiper';
-@import 'components/rules';
-@import 'components/reviews';
-@import 'components/faqs';
-@import 'components/bread-crumb';
-@import 'components/service-subhead';
-@import 'components/service-advantage';
-@import 'components/main-service';
-@import 'components/service-different';
-@import 'components/our-opinion';
-@import 'components/service-steps';
-@import 'components/_404';
-@import 'components/_blog';
-@import 'components/contact';
-@import 'components/_single-blog';
+@import "components/footer";
+@import "components/header";
+@import "components/subhead";
+@import "components/action";
+@import "components/search-info";
+@import "components/team";
+@import "components/portofio";
+@import "libs-custom/swiper";
+@import "components/rules";
+@import "components/reviews";
+@import "components/faqs";
+@import "components/bread-crumb";
+@import "components/service-subhead";
+@import "components/service-advantage";
+@import "components/main-service";
+@import "components/service-different";
+@import "components/our-opinion";
+@import "components/service-steps";
+@import "components/404";
+@import "components/blog";
+@import "components/contact";
+@import "components/single-blog";
+@import "components/single-showcase.scss";
