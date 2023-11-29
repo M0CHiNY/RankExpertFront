@@ -150,14 +150,14 @@
   &__steps {
   }
   &__step {
-    padding-bottom: calc(50px + (100 - 50) * ((100vw - 375px) / (1920 - 375)));;
+    padding-bottom: calc(50px + (100 - 50) * ((100vw - 375px) / (1920 - 375)));
     &.one--mod {
       .showcase-more__aboutcase {
         display: flex;
         flex-direction: column;
-        gap:25px;
-        @include _767{
-            flex-direction: row;
+        gap: 25px;
+        @include _767 {
+          flex-direction: row;
         }
       }
       .showcase-more__aboutcase ul {
@@ -195,18 +195,57 @@
   &__step-content {
     padding-left: calc(60px + (125 - 60) * ((100vw - 375px) / (1920 - 375)));
   }
+  .action {
+    @include _767 {
+      p {
+        margin-right: auto;
+      }
+    }
+  }
 }
-
-.showcase-more .showcase-more__step {
-}
-.showcase-more__step__wrapper {
-}
-.showcase-more__step-counter {
-}
-
-.one {
-}
-.showcase-more__aboutcase {
-}
-.showcase-more__aboutcasebox {
+.showcases {
+  &__title {
+    font-size: calc(24px + (40 - 24) * ((100vw - 375px) / (1920 - 375)));
+    max-width: 773px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+  &__description {
+    font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1920 - 375)));
+    text-align: center;
+    max-width: 773px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  .showcases__slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .swiper-wrapper {
+      width: 100%;
+      height: auto;
+    }
+    .showcase__pagintation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin-top: calc(23px + (67 - 23) * ((100vw - 375px) / (1920 - 375)));
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #000;
+        background-color: #fff;
+        cursor: pointer;
+        &.swiper-pagination-bullet-active {
+          width: 25px;
+          height: 25px;
+          background-color: $colorBorder;
+          border: transparent;
+        }
+      }
+    }
+  }
 }
