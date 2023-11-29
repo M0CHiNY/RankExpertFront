@@ -96,7 +96,7 @@ if (teamSwiperSlider) {
     direction: "horizontal",
     pagination: {
       el: ".most-popular__pagintation",
-      clickable: true
+      clickable: true,
     },
     breakpoints: {
       0: {
@@ -109,3 +109,24 @@ if (teamSwiperSlider) {
   });
 }
 // most mopular article slider end
+// showcase slider start
+const showcaseSlider = document.querySelector(".showcases__slider");
+if (showcaseSlider) {
+  const mostPopular = new Swiper(".showcases__slider", {
+    direction: "horizontal",
+    pagination: {
+      el: ".showcase__pagintation",
+      clickable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      800: {
+        slidesPerView: 2,
+        spaceBetween: 27,
+
+      },
+    },
+  });
+}

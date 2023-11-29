@@ -2,8 +2,6 @@
   padding: 25px 0;
   background-color: $colorAcent;
   color: $colorInDarkFon;
-//   max-width: 1920px;
-//   width: 100%;
   margin: 0 auto;
   @include _767 {
     background-image: url("../images/action-bg.svg");
@@ -30,7 +28,7 @@
       max-width: 500px;
     }
     @include _1024 {
-      max-width: 747px;
+      max-width: 772px;
     }
   }
   &__item:last-child {
