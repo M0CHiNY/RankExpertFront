@@ -82,39 +82,39 @@ document.addEventListener("DOMContentLoaded", function () {
   
   //scroll bar
 
-  const line = document.querySelector(".service-steps__bar");
-  const sectioWrap = document.querySelector(".service-steps");
-  // const sectioWrapItems = sectioWrap.querySelectorAll(".service-steps__item");
+  // const line = document.querySelector(".service-steps__bar");
+  // const sectioWrap = document.querySelector(".service-steps");
+  // // const sectioWrapItems = sectioWrap.querySelectorAll(".service-steps__item");
 
-  const progressAnimation = () => {
-    let scrollTop = window.scrollY;
-    // let windowCentr = window.innerHeight / 2 + scrollTop;
-    let topWrap = sectioWrap.offsetTop;
-    let heightWrap = sectioWrap.offsetHeight;
+  // const progressAnimation = () => {
+  //   let scrollTop = window.scrollY;
+  //   // let windowCentr = window.innerHeight / 2 + scrollTop;
+  //   let topWrap = sectioWrap.offsetTop;
+  //   let heightWrap = sectioWrap.offsetHeight;
 
 
-    if (scrollTop >= topWrap) {
-      let percentageProgress = Math.floor((scrollTop / heightWrap) * 100);
-      line.style.height = `${percentageProgress}%`;
-    } else {
-      line.style.height = 0;
-    }
-    // if (scrollTop >= topWrap) {
-    //   sectioWrapItems.forEach((el, index) => {
-    //     if (index % 2 !== 0) {
-    //       let scrolOfset = el.offsetTop;
-    //         let percentageProgress = Math.floor(
-    //           (scrollTop / (windowCentr - (heightWrap - scrolOfset)) * 100));
-    //         console.log(heightWrap);
-    //         line.style.height = `${percentageProgress}%`;          
-    //         console.log(el.offsetTop);
-    //     }
-    //   });
-    // }
-  };
+  //   if (scrollTop >= topWrap) {
+  //     let percentageProgress = Math.floor((scrollTop / heightWrap) * 100);
+  //     line.style.height = `${percentageProgress}%`;
+  //   } else {
+  //     line.style.height = 0;
+  //   }
+  //   // if (scrollTop >= topWrap) {
+  //   //   sectioWrapItems.forEach((el, index) => {
+  //   //     if (index % 2 !== 0) {
+  //   //       let scrolOfset = el.offsetTop;
+  //   //         let percentageProgress = Math.floor(
+  //   //           (scrollTop / (windowCentr - (heightWrap - scrolOfset)) * 100));
+  //   //         console.log(heightWrap);
+  //   //         line.style.height = `${percentageProgress}%`;          
+  //   //         console.log(el.offsetTop);
+  //   //     }
+  //   //   });
+  //   // }
+  // };
 
-  progressAnimation();
-  window.addEventListener("scroll", progressAnimation);
+  // progressAnimation();
+  // window.addEventListener("scroll", progressAnimation);
 
-});
+})
 

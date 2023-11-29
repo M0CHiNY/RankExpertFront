@@ -27,41 +27,6 @@
     overflow-y: hidden;
   }
 
-  &__progress {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 100%;
-    width: 10px;
-    border-radius: 12px;
-    background-color: $colorAcent;
-  }
-
-  &__bar {
-    @include _1024 {
-      position: relative;
-      height: 0;
-      width: 10px;
-      border-radius: 12px;
-      background-color: red;
-    }
-  }
-
-  &__slider {
-    @include _1024 {
-      height: 18px;
-      width: 20px;
-      background-color: red;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      transition: transform 0.5s ease;
-    }
-  }
-
   &__list {
     @include _1024 {
       display: grid;
@@ -73,11 +38,13 @@
   }
 
   &__item {
+    position: relative;
     margin: 0 auto;
 
     @include _1024 {
       width: calc(460px + (615 - 460) * ((100vw - 1024px) / (1920 - 1024)));
     }
+
     &:not(:last-child) {
       margin-bottom: 25px;
     }
