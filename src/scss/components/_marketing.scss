@@ -1,0 +1,147 @@
+.marketing {
+  padding-top: 100px;
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__slogan {
+    margin-bottom: 50px;
+  }
+
+  &__wrap {
+    background-color: $colorAcent;
+    padding: 15px;
+    filter: drop-shadow(30px 0 0  $colorAcent);
+    box-shadow: -30px 0 0 0 $colorAcent;
+    @include _1400 {
+        filter: drop-shadow(220px 0 0  $colorAcent);
+    box-shadow: -220px 0 0 0 $colorAcent;
+    }
+  }
+
+  &__card-box {
+    padding-bottom: 15px;
+  }
+
+  &__card-title {
+    @include mukuta-500;
+    font-size: calc(24px + (32 - 24) * ((100vw - 375px) / (1920 - 375))); 
+    text-align: center;
+    color: $colorBorder;
+    margin-bottom: 15px;
+  }
+
+  &__card-descr {
+    text-align: center;
+    color: #fff;
+    font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1920 - 375))); 
+  }
+
+  &__btn-inner{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn{
+    font-size: 24px;
+    @include mukuta-700;
+  display: flex;
+  align-items:center;
+   svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+   }
+  }
+}
+
+.cards {
+  display: grid;
+  gap: 15px;
+
+}
+.card-item {
+  position: relative;
+  width: 293px;
+  border-radius: 32px;
+  background-color: $colorInDarkFon;
+  padding: 16px 21px 20px;
+  overflow: hidden;
+  margin: 0 auto;
+  &__inner {
+    display: flex;
+  }
+  
+  &__top {
+    max-width: 100%;
+    width: 100%;
+    flex-basis: 2;
+  }
+  &__discount {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: $colorBorder;
+    color: #fff;
+    font-size: 15px;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    display: flex;
+    justify-content: flex-end;
+  
+    &::before {
+      position: absolute;
+      content: "";
+      clip-path: polygon(0 0, 0% 101%, 101% 101%);
+      background-color: $colorInDarkFon;
+      left: -1px;
+      bottom: -1px;
+      width: 71px;
+      height: 71px;
+    }
+  }
+  &__img {
+    width: calc(25px + (50 - 25) * ((100vw - 375px) / (1920 - 375)));
+    height: calc(25px + (50 - 25) * ((100vw - 375px) / (1920 - 375)));
+    margin: 0 auto 15px;
+  }
+
+  &__caption {
+    @include mukuta-500;
+    font-size: 20px;
+  }
+
+  &__text {
+    max-width: 251px;
+    font-size: 15px;
+  }
+
+  &__link-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    position: relative;
+    font-size: 15px;
+    @include mukuta-500;
+    border: 1px solid $colorBorder;
+    padding: 3px 38px 3px 18px;
+    border-radius: 16px;
+    color: $colorAcent;
+    margin: 0 auto;
+    svg {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+
+
