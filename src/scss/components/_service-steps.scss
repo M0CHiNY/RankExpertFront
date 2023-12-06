@@ -55,8 +55,11 @@
     width: calc(294px + (590 - 270) * ((100vw - 375px) / (1920 - 375)));
     padding-left: 24px;
     font-size: calc(20px + (36 - 20) * ((100vw - 375px) / (1920 - 375)));
-    margin: 0 auto 10px;
+    margin: 0 0 10px;
     position: relative;
+    @include _767 {
+      margin: 0 0 10px;
+    }
 
     &::before {
       content: "";
@@ -76,8 +79,10 @@
   }
 
   &__text {
-    margin: 0 auto;
     width: calc(340px + (565 - 340) * ((100vw - 375px) / (767 - 375)));
+    // @include _767 {
+    //   margin: 0 auto;
+    // }
 
     @include _1024 {
       width: calc(460px + (565 - 460) * ((100vw - 1024px) / (1920 - 1024)));

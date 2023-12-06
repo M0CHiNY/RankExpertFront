@@ -17,8 +17,8 @@
   margin: 0 auto;
   display: grid;
   gap: 15px;
-  max-width: 355px;
   width: 100%;
+  
 
   @include _1024 {
     max-width: 750px;
@@ -48,6 +48,7 @@
   @include mukuta-500;
   font-size: 20px;
   transform: translateY(1px);
+  cursor: pointer;
 
   @include _1024 {
     font-size: 24px;
