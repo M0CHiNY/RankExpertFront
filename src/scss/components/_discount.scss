@@ -1,0 +1,31 @@
+.discount {
+  padding: 25px 0;
+  @include _1024 {
+    padding: 100px 0;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    text-align: center;
+    @include _1024 {
+      margin-bottom: 50px;
+    }
+
+    span {
+      padding-top: 7px;
+      position: relative;
+      display: block;
+      color: $colorBorder;
+      &::after {
+        content: url("../images/icon/discount-fire.svg");
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 0;
+      }
+      @include _1024 {
+        display: inline-block;
+      }
+    }
+  }
+}
