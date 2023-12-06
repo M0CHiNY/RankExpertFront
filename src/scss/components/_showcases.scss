@@ -45,7 +45,6 @@
   .showcase-item {
     background-color: $colorAcent;
     margin: 0 auto;
-
     &:not(:last-child) {
       margin-bottom: 25px;
       @include _1024 {

@@ -162,4 +162,10 @@
   .modal-form__button {
     margin-bottom: 0;
   }
+  .modal-form__input{
+    height: 35px;
+    @include _767 {
+      height: 45px;
+    }
+  }
 }
