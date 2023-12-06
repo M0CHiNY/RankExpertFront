@@ -1,5 +1,10 @@
 .marketing {
   padding-top: 100px;
+  @include _1920 {
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
 
   &__title {
     margin-bottom: 25px;
@@ -12,67 +17,163 @@
   &__wrap {
     background-color: $colorAcent;
     padding: 15px;
-    filter: drop-shadow(30px 0 0  $colorAcent);
+    filter: drop-shadow(30px 0 0 $colorAcent);
     box-shadow: -30px 0 0 0 $colorAcent;
+    @include _767 {
+      padding: 15px 0;
+    }
+
+    @include _1024 {
+      padding: 50px 0;
+    }
+
     @include _1400 {
-        filter: drop-shadow(220px 0 0  $colorAcent);
-    box-shadow: -220px 0 0 0 $colorAcent;
+      filter: drop-shadow(220px 0 0 $colorAcent);
+      box-shadow: -220px 0 0 0 $colorAcent;
     }
   }
 
   &__card-box {
     padding-bottom: 15px;
+    position: relative;
+    margin-bottom: 15px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: #fff;
+      width: 50%;
+      height: 2px;
+      bottom: 2px;
+      box-shadow: -25px 0 0 0 $colorInDarkFon;
+      z-index: 5;
+      @include _767 {
+        box-shadow: -15px 0 0 0 $colorInDarkFon;
+      }
+      @include _1400 {
+        box-shadow: -220px 0 0 0 $colorInDarkFon;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background-color: $colorInDarkFon;
+      right: 50%;
+      bottom: 0;
+      rotate: 45deg;
+    }
+
+    &:nth-child(even) {
+      &::after {
+        height: 2px;
+        box-shadow: none;
+        filter: drop-shadow(25px 0 0 $colorInDarkFon);
+        right: 0;
+
+        @include _767 {
+          filter: drop-shadow(15px 0 0 $colorInDarkFon);
+        }
+
+        @include _1400 {
+          filter: drop-shadow(220px 0 0 $colorInDarkFon);
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      padding-bottom: 0;
+      &::after {
+        width: 0;
+      }
+
+      &::before {
+        width: 0;
+        height: 0;
+      }
+    }
+
+    @include _1024 {
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
   }
 
   &__card-title {
     @include mukuta-500;
-    font-size: calc(24px + (32 - 24) * ((100vw - 375px) / (1920 - 375))); 
+    font-size: calc(24px + (32 - 24) * ((100vw - 375px) / (1920 - 375)));
     text-align: center;
     color: $colorBorder;
     margin-bottom: 15px;
+    @include _767 {
+      text-align: left;
+    }
+    @include _1024 {
+      margin-bottom: 25px;
+    }
   }
 
   &__card-descr {
     text-align: center;
     color: #fff;
-    font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1920 - 375))); 
+    width: calc(251px + (975 - 251) * ((100vw - 375px) / (1920 - 375)));
+    font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1920 - 375)));
+
+    @include _767 {
+      text-align: left;
+    }
+    @include _1024 {
+      margin-bottom: 25px;
+    }
   }
 
-  &__btn-inner{
+  &__btn-inner {
     display: flex;
     justify-content: center;
   }
 
-  &__btn{
+  &__btn {
     font-size: 24px;
     @include mukuta-700;
-  display: flex;
-  align-items:center;
-   svg {
-    width: 30px;
-    height: 30px;
-    margin-left: 15px;
-   }
+    display: flex;
+    align-items: center;
+    svg {
+      width: 30px;
+      height: 30px;
+      margin-left: 15px;
+    }
   }
 }
 
 .cards {
   display: grid;
   gap: 15px;
-
+  @include _767 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include _1200 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .card-item {
   position: relative;
-  width: 293px;
+  min-width: calc(293px + (431 - 293) * ((100vw - 375px) / (1920 - 375)));
   border-radius: 32px;
   background-color: $colorInDarkFon;
   padding: 16px 21px 20px;
   overflow: hidden;
   margin: 0 auto;
+
+  @include _767 {
+    margin-left: 0;
+  }
+
   &__inner {
     display: flex;
   }
-  
+
   &__top {
     max-width: 100%;
     width: 100%;
@@ -80,17 +181,17 @@
   }
   &__discount {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: calc(70px + (100 - 70) * ((100vw - 375px) / (1920 - 375)));
+    height: calc(70px + (100 - 70) * ((100vw - 375px) / (1920 - 375)));
     background-color: $colorBorder;
     color: #fff;
     font-size: 15px;
-    right: 0;
+    right: -1px;
     top: 0;
     padding: 12px;
     display: flex;
     justify-content: flex-end;
-  
+
     &::before {
       position: absolute;
       content: "";
@@ -98,8 +199,8 @@
       background-color: $colorInDarkFon;
       left: -1px;
       bottom: -1px;
-      width: 71px;
-      height: 71px;
+      width: calc(71px + (101 - 71) * ((100vw - 375px) / (1920 - 375)));
+      height: calc(71px + (101 - 71) * ((100vw - 375px) / (1920 - 375)));
     }
   }
   &__img {
@@ -142,6 +243,3 @@
     }
   }
 }
-
-
-
