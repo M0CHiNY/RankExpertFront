@@ -62,7 +62,7 @@
       height: 7px;
       background-color: $colorInDarkFon;
       right: 50%;
-      bottom: 0;
+      bottom: -1px;
       rotate: 45deg;
     }
 
@@ -118,13 +118,13 @@
   &__card-descr {
     text-align: center;
     color: #fff;
-    width: calc(251px + (975 - 251) * ((100vw - 375px) / (1920 - 375)));
     font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1920 - 375)));
 
     @include _767 {
       text-align: left;
     }
     @include _1024 {
+      max-width: 900px;
       margin-bottom: 25px;
     }
   }
@@ -144,6 +144,11 @@
       height: 30px;
       margin-left: 15px;
     }
+    @include _1024 {
+      height: 50px;
+      padding-left: 150px;
+      padding-right: 150px;
+    }
   }
 }
 
@@ -151,23 +156,63 @@
   display: grid;
   gap: 15px;
   @include _767 {
+    gap: 25px;
     grid-template-columns: repeat(2, 1fr);
+
   }
   @include _1200 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 .card-item {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  min-width: calc(293px + (431 - 293) * ((100vw - 375px) / (1920 - 375)));
+  width: calc(293px + (431 - 293) * ((100vw - 375px) / (1920 - 375)));
   border-radius: 32px;
   background-color: $colorInDarkFon;
   padding: 16px 21px 20px;
   overflow: hidden;
   margin: 0 auto;
+  transition: all ease 0.5s;
+
+  &:last-child {
+    @include _767 {
+      grid-column: span 2;
+    }
+    @include _1200 {
+       grid-column: auto;
+    }
+  }
 
   @include _767 {
-    margin-left: 0;
+   margin: 0 auto;
+  }
+
+  @include _1024 {
+    &:hover {
+      background-color: $colorBtn;
+      filter: drop-shadow(0 0 0px rgb(255, 255, 255, 60%));
+      color: rgb(255, 255, 255, 80%);
+      .card-item__discount::before {
+        background-color: $colorBtn;
+      }
+
+      .card-item__img {
+        svg path {
+          fill: #fff;
+        }
+      }
+
+      .card-item__link {
+        color: #fff;
+        svg path {
+          fill: #fff;
+          stroke: #fff;
+        }
+      }
+    }
   }
 
   &__inner {
@@ -201,6 +246,7 @@
       bottom: -1px;
       width: calc(71px + (101 - 71) * ((100vw - 375px) / (1920 - 375)));
       height: calc(71px + (101 - 71) * ((100vw - 375px) / (1920 - 375)));
+       transition: all ease 0.5s;
     }
   }
   &__img {
@@ -211,28 +257,36 @@
 
   &__caption {
     @include mukuta-500;
-    font-size: 20px;
+    font-size: calc(20px + (24 - 20) * ((100vw - 375px) / (1920 - 375)));
+    margin-bottom: 15px;
+    margin-right: calc(71px + (101 - 71) * ((100vw - 375px) / (1920 - 375)));
   }
 
   &__text {
-    max-width: 251px;
+    max-width: calc(251px + (400 - 251) * ((100vw - 375px) / (1920 - 375)));
     font-size: 15px;
+    @include _767 {
+      font-size: 18px;
+    }
+    @include _1024 {
+      font-size: 20px;
+    }
   }
 
   &__link-box {
     display: flex;
     justify-content: center;
+    margin-top: auto;
   }
 
   &__link {
     position: relative;
-    font-size: 15px;
+    font-size: calc(15px + (20 - 15) * ((100vw - 375px) / (1920 - 375)));
     @include mukuta-500;
     border: 1px solid $colorBorder;
     padding: 3px 38px 3px 18px;
     border-radius: 16px;
     color: $colorAcent;
-    margin: 0 auto;
     svg {
       position: absolute;
       width: 15px;
