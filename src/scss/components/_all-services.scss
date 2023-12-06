@@ -1,0 +1,21 @@
+.all-services {
+  margin-bottom: calc(50px + (100 - 50) * ((100vw - 375px) / (1920 - 375)));
+  .marketing__title {
+    @include _767 {
+      text-align: center;
+    }
+  }
+  .marketing__slogan {
+    max-width: 1000px;
+    width: 100%;
+    margin-bottom: 15px;
+    @include _767 {
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.title {
+}
