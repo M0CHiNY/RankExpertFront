@@ -1,6 +1,6 @@
 .team {
   color: $colorInDarkFon;
-  padding-bottom: calc(25px + (75 - 25) * ((100vw - 375px) / (1920 - 375)));
+  // padding-bottom: calc(25px + (75 - 25) * ((100vw - 375px) / (1920 - 375)));
   &__inner {
     padding-top: calc(25px + (50 - 25) * ((100vw - 375px) / (1920 - 375)));
     color: $colorInDarkFon;

@@ -9,6 +9,4 @@ import './libs/joltyComponents/jolty-main.js';
 
 /* init swiper slider */
 import './swiper.js';
-
-
-
+import './partical-custom.js';
