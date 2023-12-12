@@ -1,16 +1,16 @@
 .reviews {
-  padding-top: 25px;
+  padding-bottom: 25px;
 
   @include _1024 {
-    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   @include _1200 {
-    padding-top: 75px;
+    padding-bottom: 75px;
   }
 
   @include _1400 {
-    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   &__title {
