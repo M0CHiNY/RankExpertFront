@@ -37,7 +37,7 @@ body {
 }
 .container {
   width: 100%;
-  max-width: 1510px;
+  max-width: 1350px;
   padding: 0 10px;
   margin: 0 auto;
   position: relative;
@@ -153,7 +153,7 @@ body {
     padding: 0 10px;
   }
   &__date {
-    color: $bradcrumbs-color;
+    color: #1a1a1a;
     font-size: calc(16px + (25 - 16) * ((100vw - 375px) / (1920 - 375)));
   }
   &-btn {
@@ -292,10 +292,10 @@ h4 {
   font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1920 - 375)));
 }
 h5 {
-  font-size: calc(10px + (12 - 10) * ((100vw - 375px) / (1920 - 375)));
+  font-size: 12px;
 }
 h6 {
-  font-size: calc(10px + (8 - 10) * ((100vw - 375px) / (1920 - 375)));
+  font-size: 11px;
 }
 
 p {

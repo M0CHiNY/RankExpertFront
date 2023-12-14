@@ -32,15 +32,12 @@
     }
 
     @include _1200 {
-      padding: 135px 0 25px;
+      padding: 75px 0 25px;
     }
 
-    @include _1400 {
-      padding: 150px 0 25px;
-    }
 
     @include _1920 {
-      padding: 179px 0 25px;
+      padding: 150px 0 25px;
     }
   }
 
