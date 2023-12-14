@@ -76,12 +76,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // І в разі зміни розміру вікна
   window.addEventListener("resize", checkScreenWidth);
-
-  
-  
-  
-  //scroll bar
-
-
 })
 

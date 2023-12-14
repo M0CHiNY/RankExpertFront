@@ -2,13 +2,13 @@
 /* libs */
 @import 'base/libs';
 
-/* Core variables */
+// /* Core variables */
 @import 'base/vars';
 
-/* CSS Reset */
+// /* CSS Reset */
 @import 'base/reset';
 
-/* Fonts */
+// /* Fonts */
 @import 'base/fonts';
 
 /* Mixins, helpers and functions */
@@ -16,15 +16,16 @@
 
 /* Global include*/
 @import 'base/global';
-@import 'libs-custom/swiper';
 @import 'libs-custom/menu';
 @import 'libs-custom/modal';
 @import 'libs-custom/accordion';
 @import 'libs-custom/scroll';
-
-/* Components */
 @import 'components/footer';
 @import 'components/header';
+@import 'components/bread-crumb';
+
+
+/* Components */
 @import 'components/subhead';
 @import 'components/marketing';
 @import 'components/action';
@@ -36,13 +37,13 @@
 @import 'components/reviews';
 @import 'components/discount';
 @import 'components/faqs';
-@import 'components/bread-crumb';
+
 @import 'components/service-subhead';
 @import 'components/service-advantage';
 @import 'components/main-service';
 @import 'components/service-different';
-@import 'components/our-opinion';
 @import 'components/service-steps';
+@import 'components/our-opinion';
 @import 'components/404';
 @import 'components/blog';
 @import 'components/contact';

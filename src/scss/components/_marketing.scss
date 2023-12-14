@@ -1,5 +1,6 @@
 .marketing {
   padding-top:  calc(50px + (100 - 50) * ((100vw - 375px) / (1920 - 375)));
+
   @include _1920 {
     max-width: 1920px;
     margin: 0 auto;
@@ -35,8 +36,8 @@
     }
 
     @include _1400 {
-      filter: drop-shadow(220px 0 0 $colorAcent);
-      box-shadow: -220px 0 0 0 $colorAcent;
+      filter: drop-shadow(300px 0 0 $colorAcent);
+      box-shadow: -300px 0 0 0 $colorAcent;
     }
   }
 
@@ -58,7 +59,7 @@
         box-shadow: -15px 0 0 0 $colorInDarkFon;
       }
       @include _1400 {
-        box-shadow: -220px 0 0 0 $colorInDarkFon;
+        box-shadow: -300px 0 0 0 $colorInDarkFon;
       }
     }
 
@@ -85,7 +86,7 @@
         }
 
         @include _1400 {
-          filter: drop-shadow(220px 0 0 $colorInDarkFon);
+          filter: drop-shadow(300px 0 0 $colorInDarkFon);
         }
       }
     }
@@ -176,7 +177,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: calc(293px + (431 - 293) * ((100vw - 375px) / (1920 - 375)));
+  width: calc(293px + (410 - 293) * ((100vw - 375px) / (1920 - 375)));
   border-radius: 32px;
   background-color: $colorInDarkFon;
   padding: 16px 21px 20px;
@@ -195,6 +196,10 @@
 
   @include _767 {
    margin: 0 auto;
+  }
+  @include _1920 {
+    max-width: 410px;
+    width: 410px;
   }
 
   @include _1024 {
@@ -301,6 +306,13 @@
       right: 15px;
       top: 50%;
       transform: translateY(-50%);
+    }
+  }
+  
+  &.card-item--mod {
+    grid-column: span 1;
+     @include _767 {
+      grid-column: span 1;
     }
   }
 }

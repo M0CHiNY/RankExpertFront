@@ -33,6 +33,7 @@
   &__card {
     margin: 0 auto;
     max-width: 340px;
+    min-height: 340px;
 
     &:not(:last-child) {
       padding-right: 5px;
@@ -72,11 +73,7 @@
     }
 
     @include _1200 {
-      max-width: 456px;
-    }
-
-    @include _1400 {
-      max-width: 460px;
+      max-width: 420px;
     }
   }
 
@@ -97,14 +94,10 @@
 
   &__name {
     font-size: 24px;
+    margin-bottom: 15px;
     @include mukuta-700;
   }
 
-  &__link {
-    display: block;
-    color: inherit;
-    margin-bottom: 15px;
-  }
 
   &__stars-box {
     max-width: 120px;
