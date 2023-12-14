@@ -45,10 +45,11 @@
     }
   }
   &-item {
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     max-width: 767px;
     width: 100%;
     @include _1024 {
+      margin-bottom: 25px;
       width: 541px;
     }
     @include _1400 {
