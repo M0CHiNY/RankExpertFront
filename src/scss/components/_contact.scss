@@ -164,6 +164,14 @@
     &--file {
       height: 30px;
     }
+    &:first-child {
+      @include _1200 {
+        margin-right: 5px;
+      }
+      @include _1920 {
+        margin-right: 7px;
+      }
+    }
   }
 
   .modal-form__button {
