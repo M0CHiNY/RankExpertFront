@@ -1,11 +1,13 @@
 // import Swiper JS
-import Swiper from "swiper/bundle";
+import Swiper from 'swiper';
 
+import { Navigation, Pagination } from 'swiper/modules';
 // Section team start
-const teamSwiper = document.querySelector(".portfolio__swiper");
+let teamSwiper;
 
-if (teamSwiper) {
-  const swiper = new Swiper(".team-swiper", {
+function teamInitSwiper() {
+  teamSwiper = new Swiper(".team-swiper", {
+    modules: [Navigation, Pagination],
     direction: "horizontal",
     navigation: {
       nextEl: ".team-button__next",
@@ -33,6 +35,21 @@ if (teamSwiper) {
   });
 }
 
+function destroySwiper() {
+  if (teamSwiper) {
+    teamSwiper.destroy(true, true);
+  }
+}
+
+// Initialization of Swiper when the page loads
+teamInitSwiper();
+
+// Update Swiper on window resize
+window.addEventListener("resize", () => {
+  destroySwiper();
+  teamInitSwiper();
+});
+
 // Section team end
 
 // Section our porfolio start
@@ -46,6 +63,7 @@ function initSwiper() {
   }
 
   const swiper = new Swiper(".portfolio__swiper", {
+    modules: [Navigation, Pagination],
     direction: "horizontal",
     pagination: {
       el: ".portfolio-pagination",
@@ -92,7 +110,9 @@ if (swiperContainer) {
 const teamSwiperSlider = document.querySelector(".most-popular__swiper");
 
 if (teamSwiperSlider) {
+  
   const mostPopular = new Swiper(".most-popular__swiper", {
+    modules: [Navigation, Pagination],
     direction: "horizontal",
     pagination: {
       el: ".most-popular__pagintation",
@@ -113,6 +133,7 @@ if (teamSwiperSlider) {
 const showcaseSlider = document.querySelector(".showcases__slider");
 if (showcaseSlider) {
   const mostPopular = new Swiper(".showcases__slider", {
+    modules: [Navigation, Pagination],
     direction: "horizontal",
     pagination: {
       el: ".showcase__pagintation",
